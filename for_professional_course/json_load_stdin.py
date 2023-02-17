@@ -1,12 +1,10 @@
-import json
 import sys
+import json
 
-data = json.loads(sys.stdin.read())
-for k, v in data.items():
-    if isinstance(v, list):
-        print(f'{k}: {", ".join(map(str, v))}')
-    else:
-        print(f'{k}: {v}')
+for key, value in json.loads(sys.stdin.read()).items():
+    if isinstance(value, list):
+        value = ", ".join(map(str, value))
+    print(f"{key}: {value}")
 
 """
 Test data
