@@ -2,7 +2,7 @@ import re
 
 
 def rebuild_string(s):
-    if s[:2] == '+7' or s[:2] == '+8':
+    if s[0] == '+':
         s = s[2:]
     else:
         s = s[1:]
